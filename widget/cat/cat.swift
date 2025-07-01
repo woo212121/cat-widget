@@ -63,6 +63,14 @@ struct cat: Widget {
             catEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .supportedFamilies([
+            .accessoryCircular,
+            .accessoryRectangular,
+            .accessoryInline,
+            .systemSmall,
+            .systemMedium,
+            .systemLarge
+        ])
     }
 }
 
@@ -80,9 +88,8 @@ extension ConfigurationAppIntent {
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .accessoryCircular) {
     cat()
 } timeline: {
     SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
 }
